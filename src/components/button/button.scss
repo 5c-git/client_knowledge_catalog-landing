@@ -1,0 +1,45 @@
+.button {
+  display: inline-grid;
+  min-width: max-content;
+  min-height: 55px;
+  justify-content: center;
+  align-items: center;
+  margin: 0;
+  padding-top: 4px;
+  padding-right: 30px;
+  padding-bottom: 4px;
+  padding-left: 30px;
+  border: 0;
+  border-radius: 30px;
+  text-align: center;
+  text-decoration: none;
+  font-size: var(--font-size-b1);
+  line-height: var(--line-height-b1);
+  font-weight: var(--p-bold);
+  color: var(--color-white);
+  background-color: var(--color-primary);
+  transition: background-color 0.3s;
+  flex-shrink: 0;
+  cursor: pointer;
+
+  @media(max-width: $phone) {}
+
+  &:not(.button--transparent):not(.button--blue):not(:disabled):hover {
+    @media(min-width: $desktop-only) {
+      background-color: var(--color-heading-1);
+    }
+  }
+
+  &:disabled {
+    opacity: 0.3;
+    cursor: not-allowed;
+  }
+
+  svg {
+    fill: currentcolor;
+  }
+
+  &--grey {
+    background-color: var(--color-body);
+  }
+}

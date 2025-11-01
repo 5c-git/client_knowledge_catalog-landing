@@ -1,0 +1,61 @@
+doctype html
+html(lang="ru")
+  head
+    meta(charset="UTF-8")
+    meta(name="viewport", content="width=device-width, initial-scale=1.0")
+    meta(name="format-detection" content="telephone=no")
+    meta(name="theme-color" content="#231f20")
+
+    //- favicons
+    <link rel="apple-touch-icon" sizes="76x76" href="./assets/favicons/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="./assets/favicons/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="./assets/favicons/favicon-16x16.png">
+    <link rel="manifest" href="./assets/favicons/site.webmanifest">
+    <link rel="mask-icon" href="./assets/favicons/safari-pinned-tab.svg" color="#5bbad5">
+    <link rel="shortcut icon" href="./assets/favicons/favicon.ico">
+    <meta name="msapplication-TileColor" content="#da532c">
+    <meta name="msapplication-config" content="./assets/favicon/browserconfig.xml">
+    <meta name="theme-color" content="#ffffff">
+    //- favicons
+
+    title infinitumonline catalog
+
+    //- место для подключения стилей jquery библиотек
+    //- link(href='libsJQ/test.css' rel='stylesheet')
+
+  body
+    block mixins
+      include ../components/alert/alert
+      include ../components/layout/layout
+      include ../components/service-card/service-card
+      include ../components/site-nav/site-nav
+      include ../components/field/field
+
+    block header
+      include ../components/header/header
+
+    main
+      block main
+
+    block footer
+      include ../components/footer/footer
+      include ../components/up/up
+
+    include ../components/alert-wrapper/alert-wrapper
+
+    template#cookie
+      include ../components/cookie/cookie
+
+    div
+      template#alert--error
+        +alert({
+          error: true,
+        })
+      template#alert--request
+        +alert({
+          request: true,
+        })
+
+    //- jQuery скрипты
+    script(src='libsJQ/jquery.min.js')
+    block meta

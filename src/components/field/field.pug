@@ -1,0 +1,103 @@
+mixin field(props)
+  div.field(class=props.mixin)
+    div.field__inner
+      label(for=props.id).validator__description.field__label!=props.label
+
+      if props.select
+        select(
+          name=props.name
+          id=props.id
+          class=props.secondClass
+          data-search=props.search
+          required=props.required
+        ).field__input.field__input--select
+          option(value)=props.placeholder
+          option(value="1") 1 взрослый
+          option(value="2") Подача документов на открытие счёте в реестре
+          option(value="3") 3 взрослых
+          option(value="25") 25 взрослых
+          option(value="В работе") В работе
+          option(value="Москва") Подача документов на изменение анкетных данных по лицевому счёту в реестре
+          option(value="Рязань") Возврат
+          option(value="Норильск") Возврат
+          option(value="Челябинск") Возврат
+          option(value="Возврат") Возврат
+          option(value="Выпущен") Выпущен
+          option(value="Исполнено") Исполнено
+          option(value="Отмена") Отмена
+          option(value="Черновик") Черновик
+          
+      else if props.textarea
+        textarea(
+          name=props.name
+          id=props.id
+          minlength=props.minlength
+          maxlength=props.maxlength
+          autocomplete='off'
+          autocapitalize='off'
+          placeholder=props.placeholder
+          value=props.value
+          class=props.secondClass
+          disabled=props.disabled
+          required=props.required
+        ).field__input=props.value
+        
+      else if props.checkbox
+        label.validator__description.field__checkbox-label
+          if props.text
+            span!=props.text
+          input(
+            type='checkbox'
+            name=props.name
+            data-name=props.dataname
+            id=props.id
+            class=props.secondClass
+            data-bouncer-match=props.match
+            disabled=props.disabled
+            required=props.required
+            checked=props.checked
+          ).visually-hidden
+          span.field__box
+      
+      else if props.radio
+        span.field__checkbox-legend=props.title
+        div.field__checkbox-fields
+          each label in props.labels
+            label.field__checkbox-label
+              if label.text
+                span!=label.text
+              input(
+                type='radio'
+                name=props.name
+                id=label.id
+                value=label.value
+                disabled=label.disabled
+                required=label.required
+                checked=label.checked
+              ).visually-hidden
+              span.field__box
+
+      else
+        input(
+          type=props.type 
+          inputmode=props.inputmode
+          name=props.name
+          id=props.id
+          minlength=props.minlength
+          maxlength=props.maxlength
+          autocomplete='off'
+          autocapitalize='off'
+          placeholder=props.placeholder
+          value=props.value
+          class=props.secondClass
+          data-bouncer-match=props.match
+          data-min-time=props.mintime
+          data-max-time=props.maxtime
+          data-min-date=props.mindate
+          data-max-date=props.maxdate
+          disabled=props.disabled
+          required=props.required
+          data-bouncer-target=props.bouncerTarget
+        ).field__input
+
+    div(id=props.target).validator__error-container.field__error

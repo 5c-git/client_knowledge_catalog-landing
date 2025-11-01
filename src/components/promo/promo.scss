@@ -1,0 +1,48 @@
+.promo {
+  display: grid;
+  align-items: center;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 120px;
+
+  @media(max-width: $desktop) {
+    gap: 60px;
+  }
+
+  @media(max-width: $tablet) {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  @media(max-width: $phone) {
+    gap: 30px;
+  }
+
+  &__main {
+    display: flex;
+    flex-direction: column;
+    gap: 60px;
+
+    @media(max-width: $tablet) {
+      gap: 30px;
+    }
+  }
+
+  &__title {
+    @include h2;
+  }
+
+  &__banner {
+    margin: 0;
+    padding: 0;
+
+    @media(max-width: $tablet) {
+      display: none;
+    }
+
+    img {
+      width: auto;
+      max-width: 100%;
+      height: auto;
+      display: block;
+    }
+  }
+}

@@ -1,0 +1,11 @@
+mixin service-card(props)
+  div.service-card 
+    i.service-card__icon
+      img(src=props.icon alt="")
+    div.service-card__wrapper
+      span.service-card__title=props.title
+      div.service-card__main
+        div.service-card__content
+          p=props.text
+        a(href="#").service-card__link
+        

@@ -1,0 +1,54 @@
+extends ../templates/default
+
+block main
+  include ../components/intro/intro
+
+  +layout({})
+    include ../components/slider/slider
+
+  +layout({})
+    include ../components/promo/promo
+
+  +layout({
+    title: 'Сопровождение деятельности<br> ПИФ и УК ПИФ',
+    mixin: 'layout--column2',
+  })
+    +site-nav({
+      label: 'Консалтинг',
+      items: [
+        'Единовременный аудит деятельности УК ПИФ',
+        'ИНФИНИТУМ Онлайн',
+        'Сопровождение процессов ПИФ',
+      ],
+    })
+    +site-nav({
+      label: 'Цифровые сервисы',
+      items: [
+        'ИНФИНИТУМ Онлайн',
+        'Электронное голосование',
+      ],
+    })
+    +site-nav({
+      label: 'Аутсорсинг',
+      items: [
+        'Учет и отчетность ПИФ',
+        'Бухгалтерский и налоговый учет УК ПИФ',
+        'XBRL',
+        'Внутренний контроль УК ПИФ ПОД/ФТ, ФРОМУ',
+        'Риск-менеджмент УК ПИФ',
+      ],
+    })
+    +site-nav({
+      label: 'Образовательные услуги Академии ИНФИНИТУМ ',
+      items: [
+        'Профи учета ПИФ',
+        'Профи рынка ПИФ',
+        'Участие в вебинарах',
+      ],
+    })
+
+  +layout({
+    mixin: 'layout--grey',
+  })
+    include ../components/request/request
+    

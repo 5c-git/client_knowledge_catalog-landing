@@ -1,0 +1,102 @@
+.site-nav {
+
+  &__label {
+    display: block;
+    margin-bottom: 30px;
+    font-family: var(--font-secondary);
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 28px;
+    color: #B1B1B1;
+
+    @media(max-width: $phone) {
+      margin-bottom: 20px;
+      font-size: 16px;
+      line-height: 22px;
+    }
+  }
+
+  &__list {
+    display: flex;
+    flex-direction: column;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    gap: 24px;
+
+    @media(max-width: $phone) {
+      gap: 20px;
+    }
+  }
+
+  &__item {
+    display: flex;
+    align-items: center;
+    padding-bottom: 24px;
+    font-family: var(--font-secondary);
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 32px;
+    color: var(--color-heading-1);
+    border-bottom: 2px solid var(--color-primary);
+    gap: 16px;
+
+    @media(max-width: $phone) {
+      padding-bottom: 20px;
+      font-size: 18px;
+      line-height: 24px;
+      border-width: 1px;
+    }
+
+    &:before {
+      width: 8px;
+      height: 8px;
+      background-color: var(--color-primary);
+      border-radius: 50%;
+      flex-shrink: 0;
+      content: '';
+
+      @media(max-width: $phone) {
+        width: 6px;
+        height: 6px;
+      }
+    }
+
+    a {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      color: inherit;
+      flex-grow: 1;
+      transition: color 0.3s;
+      text-decoration: none;
+      gap: 16px;
+
+      &:hover {
+        @media(min-width: $desktop-only) {
+          color: var(--color-primary);
+        }
+      }
+
+      &:after {
+        width: 24px;
+        height: 24px;
+        color: var(--color-primary);
+        background-color: currentColor;
+        mask-size: cover;
+        mask-position: center right;
+        mask-repeat: no-repeat;
+        mask-image: url("data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjQiIGhlaWdodD0iMjQiIHZpZXdCb3g9IjAgMCAyNCAyNCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHBhdGggZD0iTTMgMTJIMjFNMjEgMTJMMTIuNSAzLjVNMjEgMTJMMTIuNSAyMC41IiBzdHJva2U9IiNFRTI3MzciIHN0cm9rZS13aWR0aD0iMS41IiBzdHJva2UtbGluZWNhcD0icm91bmQiIHN0cm9rZS1saW5lam9pbj0icm91bmQiLz4KPC9zdmc+Cg==");
+        flex-shrink: 0;
+        content: '';
+
+        @media(max-width: $phone) {
+          width: 20px;
+          height: 20px;
+        }
+      }
+    }
+  }
+}

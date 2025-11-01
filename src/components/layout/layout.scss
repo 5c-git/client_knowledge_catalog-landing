@@ -1,0 +1,82 @@
+.layout {
+  margin-top: 100px;
+  margin-bottom: 100px;
+
+  @media(max-width: $phone) {
+    margin-top: 40px;
+    margin-bottom: 40px;
+  }
+
+  &__header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 60px;
+    column-gap: 20px;
+
+    @media(max-width: $phone) {
+      margin-bottom: 30px;
+    }
+  }
+
+  &__title {
+    @include h2;
+  }
+
+  &__more {
+    text-decoration: none;
+    color: $Primary-3;
+    transition:
+      color 0.3s,
+      opacity 0.3s;
+
+    @media(max-width: $phone) {}
+
+    &:hover {
+      @media(min-width: $desktop-only) {
+        opacity: 0.8;
+      }
+    }
+
+    &:active {
+      color: $Primary-2;
+      opacity: 1;
+    }
+  }
+
+  &--column2 {
+
+    .layout {
+      &__wrapper {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 120px;
+
+        @media(max-width: $desktop) {
+          gap: 60px;
+        }
+
+        @media(max-width: $tablet) {
+          grid-template-columns: minmax(0, 1fr);
+        }
+
+        @media(max-width: $phone) {
+          gap: 30px;
+        }
+      }
+    }
+  }
+
+  &--grey {
+    margin-top: 0;
+    margin-bottom: 0;
+    padding-top: 80px;
+    padding-bottom: 100px;
+    background-color: #F4F3F3;
+
+    @media(max-width: $phone) {
+      padding-top: 30px;
+      padding-bottom: 30px;
+    }
+  }
+}

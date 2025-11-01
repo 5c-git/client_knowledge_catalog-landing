@@ -1,0 +1,74 @@
+div.request
+   div.request__main
+    h2.request__title Задайте интересующий<br> вас вопрос
+    form(action="#" method='post').request__form
+      div.request__fields
+        div.request__field
+          +field({
+            type: 'text',
+            name: 'First-nname',
+            id: 'First-name',
+            placeholder: 'Ваше имя',
+            secondClass: 'validator__required',
+          })
+
+        div.request__field
+          +field({
+            type: 'text',
+            name: 'Company-name',
+            id: 'Company-name',
+            placeholder: 'Ваша организация',
+            secondClass: 'validator__required',
+          })
+
+        div.request__field
+          +field({
+            type: 'tel',
+            name: 'Phone-number',
+            id: 'Phone-number',
+            placeholder: '+7 (999) 999-99-99',
+            secondClass: 'validator__phone',
+          })
+
+        div.request__field
+          +field({
+            type: 'email',
+            name: 'Email',
+            id: 'Email',
+            placeholder: 'Электронная почта',
+            secondClass: 'validator__mail',
+          })
+
+        div.request__field.request__field--wide
+          +field({
+            select: true,
+            name: 'Category-1',
+            id: 'Category-1',
+            secondClass: 'validator__choices',
+            placeholder: 'Категория вопроса',
+          })
+
+        div.request__field.request__field--wide
+          +field({
+            textarea: true,
+            name: 'Request-text',
+            id: 'Request-text',
+            maxlength: '2000',
+            placeholder: 'Введите ваш вопрос',
+            secondClass: 'validator__required',
+          })
+
+      div.request__legal
+        div.request__legal-check
+          +field({
+            checkbox: true,
+            name: 'Legal',
+            id: 'Legal',
+            text: 'Я соглашаюсь с <a href="#" target="_blank">политикой конфиденциальности</a> и <a href="#" target="_blank">пользовательским соглашением</a>.',
+            required: true,
+          })
+
+        button(type='submit').button Отправить
+
+   figure.request__banner
+    img(src="./assets/images/request-1.png", alt="")

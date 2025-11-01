@@ -1,0 +1,70 @@
+div.slider
+  div.swiper.slider__swiper
+    ul.swiper-wrapper.slider__list
+      li.swiper-slide.slider__item
+        +service-card({
+          icon: './assets/images/service-card-1.png',
+          title: 'Заголовок баннера, который может быть длинным и занимать две строки но надо их обрезать через многоточие.',
+          text: 'Здесь может быть какой-то дополнительный текст, который занимает три строки и обрезается ,если места недостаточно',
+        })
+      li.swiper-slide.slider__item
+        +service-card({
+          icon: './assets/images/service-card-2.png',
+          title: 'Заголовок баннера',
+          text: 'Немного текста.',
+        })
+      li.swiper-slide.slider__item
+        +service-card({
+          icon: './assets/images/service-card-2.png',
+          title: 'Заголовок баннера, который может быть длинным и занимать две строки но надо их обрезать через многоточие.',
+          text: 'Немного текста.',
+        })
+      li.swiper-slide.slider__item
+        +service-card({
+          icon: './assets/images/service-card-1.png',
+          title: 'Заголовок баннера',
+          text: 'Здесь может быть какой-то дополнительный текст, который занимает три строки и обрезается ,если места недостаточно',
+        })
+      li.swiper-slide.slider__item
+        +service-card({
+          icon: './assets/images/service-card-1.png',
+          title: 'Заголовок баннера',
+          text: 'Немного текста.',
+        })
+      li.swiper-slide.slider__item
+        +service-card({
+          icon: './assets/images/service-card-2.png',
+          title: 'Заголовок баннера',
+          text: 'Здесь может быть какой-то дополнительный текст, который занимает три строки и обрезается ,если места недостаточно',
+        })
+      li.swiper-slide.slider__item
+        +service-card({
+          icon: './assets/images/service-card-1.png',
+          title: 'Заголовок баннера, который может быть длинным и занимать две строки но надо их обрезать через многоточие.',
+          text: 'Здесь может быть какой-то дополнительный текст, который занимает три строки и обрезается ,если места недостаточно',
+        })
+      li.swiper-slide.slider__item
+        +service-card({
+          icon: './assets/images/service-card-2.png',
+          title: 'Заголовок баннера',
+          text: 'Немного текста.',
+        })
+      li.swiper-slide.slider__item
+        +service-card({
+          icon: './assets/images/service-card-1.png',
+          title: 'Заголовок баннера, который может быть длинным и занимать две строки но надо их обрезать через многоточие.',
+          text: 'Здесь может быть какой-то дополнительный текст, который занимает три строки и обрезается ,если места недостаточно',
+        })
+      li.swiper-slide.slider__item
+        +service-card({
+          icon: './assets/images/service-card-1.png',
+          title: 'Заголовок баннера',
+          text: 'Здесь может быть какой-то дополнительный текст, который занимает три строки и обрезается ,если места недостаточно',
+        })
+
+  div.slider__nav
+    div.slider__pagination
+
+  div.slider__buttons
+    button(type='button' aria-label='Предыдущий слайд.').slider__button.slider__button--prev
+    button(type='button' aria-label='Следующий слайд.').slider__button.slider__button--next

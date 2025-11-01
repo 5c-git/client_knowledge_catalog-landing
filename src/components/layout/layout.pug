@@ -1,0 +1,12 @@
+mixin layout(props)
+  section.layout(class=props.mixin)
+    div.container 
+          
+      if props.title
+        div.layout__header
+          h2.layout__title!=props.title
+          if props.more
+            a(href="#").layout__more=props.more
+
+      div.layout__wrapper
+        block

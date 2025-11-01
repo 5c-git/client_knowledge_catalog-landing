@@ -1,0 +1,8 @@
+mixin site-nav(props)
+  div.site-nav
+    if props.label
+      span.site-nav__label=props.label
+    ul.site-nav__list
+      each item in props.items
+        li.site-nav__item
+          a(href="#")=item

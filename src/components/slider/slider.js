@@ -2,7 +2,7 @@ import './slider.scss';
 
 import Swiper from 'swiper';
 import {
-  Navigation, Pagination,
+  Navigation, Pagination, Autoplay
 } from 'swiper/modules';
 
 const sliderInit = (container) => {
@@ -14,11 +14,15 @@ const sliderInit = (container) => {
   const buttonNext = slider.querySelector('.slider__button--next');
 
   new Swiper(swiper, {
-    modules: [Navigation, Pagination],
+    modules: [Navigation, Pagination, Autoplay],
     // Optional parameters
     slidesPerView: 'auto',
     spaceBetween: 15,
     loop: false,
+    autoplay: {
+      delay: 5000,
+      disableOnInteraction: false,
+    },
     // Navigation arrows
     navigation: {
       prevEl: buttonPrev,

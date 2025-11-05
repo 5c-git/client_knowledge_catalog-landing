@@ -48,17 +48,8 @@ if (header) {
   const menuOff = () => {
     getPaddingFromBody();
     header.classList.remove('header--dropdown');
-    header.querySelectorAll('.mobile-nav__sub-container--active').forEach((el) => {
-      el.classList.remove('mobile-nav__sub-container--active');
-    });
-    header.querySelectorAll('.mobile-nav__nav-item--sub').forEach((el) => {
-      el.classList.remove('mobile-nav__nav-item--sub');
-    });
-    header.querySelectorAll('.mobile-dropdown__sub--active').forEach((el) => {
-      el.classList.remove('mobile-dropdown__sub--active');
-      el.style.maxHeight = null;
-    });
   };
+
   if (burger) {
     burger.addEventListener('click', () => {
       if (header.classList.contains('header--dropdown')) {
@@ -67,15 +58,6 @@ if (header) {
         header.classList.add('header--dropdown');
         getPaddingOnBody();
       }
-    });
-  }
-
-  const subOut = header.querySelector('.header__sub-out');
-  if (subOut) {
-    subOut.addEventListener('click', () => {
-      header.querySelectorAll('.mobile-nav__nav-item--sub').forEach((el) => {
-        el.classList.remove('mobile-nav__nav-item--sub');
-      });
     });
   }
 }

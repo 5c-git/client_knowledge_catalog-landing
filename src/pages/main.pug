@@ -6,10 +6,13 @@ block main
   +layout({})
     include ../components/slider/slider
 
-  +layout({})
+  +layout({
+    id: '1',
+  })
     include ../components/promo/promo
 
   +layout({
+    id: '2',
     title: 'Сопровождение деятельности<br> ПИФ и УК ПИФ',
     mixin: 'layout--column2',
   })
@@ -48,6 +51,7 @@ block main
     })
 
   +layout({
+    id: '3',
     mixin: 'layout--grey',
   })
     include ../components/request/request
